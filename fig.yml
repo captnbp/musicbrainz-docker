@@ -1,0 +1,16 @@
+postgresql:
+  build: postgres-dockerfile
+  volumes:
+    - /opt/musicbrainz/dbdata:/var/lib/postgresql/data
+  user: 0
+  environment:
+    - POSTGRES_PASSWORD=musicbrainz
+    - POSTGRES_USER=musicbrainz
+musicbrainz:
+  build: musicbrainz-dockerfile
+  volumes:
+    - /opt/musicbrainz/dbdump:/media/dbdump:rw
+  ports:
+    - "5000:5000"
+  links:
+    - "postgresql:db"

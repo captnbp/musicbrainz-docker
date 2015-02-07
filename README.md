@@ -3,27 +3,16 @@ musicbrainz docker container
 
 This repo contains everything needed to run a musicbrainz slave server with replication in a docker container.
 
-### Installation
+First, thanks to Jeff Sturgis <jeffsturgis@gmail.com> with this repository : https://github.com/jsturgis/musicbrainz-docker
 
-###### Data Container
-* cd to data-dockerfile
-* modify the run.sh file to point to the directory on the host machine where you want to store the database
-* `sudo ./build.sh`
-* `sudo ./run.sh`
+### Installation
+* `sudo fig build`
+
+### Update volumes setup ###
+*  vim fig.yml
  
-###### Postgresql Container
-* cd to postgres-dockerfile
-* `sudo ./build.sh`
-* `sudo ./run.sh`
- 
-###### Musicbrainz Server Container
-* cd to musicbrainz-dockerfile
-* modify the run.sh file to point to a data directory on the host machine where you want to store DB dumps (over 5 gigs)
-* `sudo ./build.sh`
-* `sudo ./run.sh`
- 
-###### Autostart
-* `sudo ./autostart.sh` 
+###### Start
+* `sudo fig up` 
 
 ### Create Database
 If this is a new instance and you need to create the database:
