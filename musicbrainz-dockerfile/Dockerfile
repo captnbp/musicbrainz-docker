@@ -12,7 +12,7 @@ RUN echo "eval $( perl -Mlocal::lib )"
 RUN echo "eval $( perl -Mlocal::lib )" >> ~/.bashrc && . ~/.bashrc
 RUN cpanm https://cpan.metacpan.org/authors/id/E/ET/ETHER/namespace-autoclean-0.22.tar.gz
 RUN cpanm TURNSTEP/DBD-Pg-3.4.2.tar.gz
-RUN cpanm http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Test-Warnings-0.019.tar.gz
+RUN cpanm http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Test-Warnings-0.020.tar.gz
 RUN apt-get install -y libdatetime-perl libtest-warnings-perl libnamespace-clean-perl libcatalyst-perl libnet-dns-perl libmoosex-types-common-perl libhtml-formhandler-perl
 #RUN cpanm http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-Strptime-1.56.tar.gz
 RUN cpanm http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.81.tar.gz
