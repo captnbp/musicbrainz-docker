@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive
 RUN apt-get install -y git-core postgresql-9.3 postgresql-plperl-9.3
 RUN apt-get install -y memcached redis-server build-essential libxml2-dev libpq-dev libexpat1-dev libdb-dev libicu-dev liblocal-lib-perl cpanminus
 
-RUN git clone --recursive https://github.com/metabrainz/musicbrainz-server.git musicbrainz-server && cd musicbrainz-server && git checkout schema-change-20-to-21
+RUN git clone --recursive https://github.com/metabrainz/musicbrainz-server.git musicbrainz-server && cd musicbrainz-server
 RUN echo "eval $( perl -Mlocal::lib )"
 RUN echo "eval $( perl -Mlocal::lib )" >> ~/.bashrc && . ~/.bashrc
 RUN cpanm https://cpan.metacpan.org/authors/id/E/ET/ETHER/namespace-autoclean-0.22.tar.gz
