@@ -7,12 +7,12 @@ RUN DEBIAN_FRONTEND=noninteractive
 RUN apt-get install -y git-core postgresql-9.3 postgresql-plperl-9.3
 RUN apt-get install -y memcached redis-server build-essential libxml2-dev libpq-dev libexpat1-dev libdb-dev libicu-dev liblocal-lib-perl cpanminus
 
-RUN git clone --recursive https://github.com/metabrainz/musicbrainz-server.git musicbrainz-server && cd musicbrainz-server && git checkout schema-change-20-to-21
+RUN git clone --recursive https://github.com/metabrainz/musicbrainz-server.git musicbrainz-server && cd musicbrainz-server
 RUN echo "eval $( perl -Mlocal::lib )"
 RUN echo "eval $( perl -Mlocal::lib )" >> ~/.bashrc && . ~/.bashrc
 RUN cpanm https://cpan.metacpan.org/authors/id/E/ET/ETHER/namespace-autoclean-0.22.tar.gz
 RUN cpanm TURNSTEP/DBD-Pg-3.4.2.tar.gz
-RUN cpanm http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Test-Warnings-0.019.tar.gz
+RUN cpanm http://search.cpan.org/CPAN/authors/id/E/ET/ETHER/Test-Warnings-0.020.tar.gz
 RUN apt-get install -y libdatetime-perl libtest-warnings-perl libnamespace-clean-perl libcatalyst-perl libnet-dns-perl libmoosex-types-common-perl libhtml-formhandler-perl
 #RUN cpanm http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-Strptime-1.56.tar.gz
 RUN cpanm http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Format-Builder-0.81.tar.gz
