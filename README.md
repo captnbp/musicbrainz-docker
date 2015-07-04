@@ -5,14 +5,15 @@ This repo contains everything needed to run a musicbrainz slave server with repl
 
 First, thanks to Jeff Sturgis <jeffsturgis@gmail.com> with this repository : https://github.com/jsturgis/musicbrainz-docker
 
+To make the install easier, you can user https://docs.docker.com/compose/
 ### Installation
-* `sudo fig build`
+* `docker-compose build`
 
 ### Update volumes setup ###
-*  vim fig.yml
+* `vim docker-compose.yml`
  
 ###### Start
-* `sudo fig up` 
+* `docker-compose up` 
 
 ### Create Database
 If this is a new instance and you need to create the database:
